@@ -1,0 +1,86 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <head>
+        <link rel="stylesheet" href="/css/content.css">
+    </head>
+
+    <body>
+        <!-- ---------------------------------- NAVBAR USING JAVASCRIPT ------------------------------------- -->
+
+
+        <!-- ---------------------------------- HEADER SECTION EXCEPT HOME PAGE ------------------------------------- -->
+        <div class="header-section-outer">
+            <div class="header-section">
+                <div class="header-section-content">
+                    <h1>Resourses</h1>
+                    <!-- content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------------- MAIN ------------------------------------- -->
+        <main>
+            <!-- ---------------------------------- TOPICS SECTION ------------------------------------- -->
+            <section class="courses-section">
+                <div class="card-grid">
+                    <!-- HERE CARD WILL BE ADD -->
+                    <% for (const resource of topic.resources) { %>
+
+                        <div class="card">
+                            <div class="image-container">
+                                <img src="<%= resource.resourceImage %>" alt="<%= resource.altResourceImage %>"
+                                    class="course-img">
+                            </div>
+                            <div class="content">
+                                <h2 class="title">
+                                    <%= resource.resourceTitle %>
+                                </h2>
+                                <p class="description">
+                                    <%= resource.resourceDescription %>
+                                </p>
+                                <div class="btns">
+                                    <a href="<%= resource.resourceLink %>" class="btn" target="_blank">Start Now</a>
+                                    <% if (currUser && currUser._id.equals('66f6f0e9a88a472ee64de432')) { %>
+                                        <form
+                                            action="/courses/<%= course.name %>/<%= topic.topicTitle %>/<%= resource._id %>?_method=DELETE"
+                                            method="post">
+                                            <button class="btn">Delete <i
+                                                    class="fa-solid fa-chevron-right"></i></button>
+                                        </form>
+                                        <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+            </section>
+            <% if (currUser && currUser._id.equals('66f6f0e9a88a472ee64de432')) { %>
+                <section class="add-course-form">
+                    <form action="/courses/<%= course.name %>/<%= topic.topicTitle %>" method="post">
+                        <div>
+                            <label for="resourceTitle">Enter Name of Resourse:</label>
+                            <input type="text" name="resourceTitle" id="resourceTitle" required>
+                        </div>
+                        <div>
+                            <label for="resourceDescription">Enter Resource Description:</label>
+                            <input type="text" name="resourceDescription" id="resourceDescription" required>
+                        </div>
+                        <div>
+                            <label for="resourceLink">Enter Resource Link:</label>
+                            <input type="text" name="resourceLink" id="resourceLink" required>
+                        </div>
+                        <div>
+                            <label for="resourceImage">Image URL of Resource:</label>
+                            <input type="text" name="resourceImage" id="resourceImage" required>
+                        </div>
+                        <div>
+                            <label for="altResourceImage">Alternate Text for Resource Image:</label>
+                            <input type="text" name="altResourceImage" id="altResourceImage" required>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+
+                </section>
+                <% } %>
+        </main>
+    </body>

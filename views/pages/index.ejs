@@ -1,0 +1,502 @@
+<% layout('/layouts/boilerplate') -%>
+
+
+    <body>
+        <!-- ---------------------------------- NAVBAR USING JAVASCRIPT ------------------------------------- -->
+
+
+        <!-- ---------------------------------- HERO SECTION ------------------------------------- -->
+        <header class="hero">
+            <div class="hero-slider">
+                <!-- Slide 1 -->
+                <div class="slide active" style="background-image: url('./images/slide1.jpg');">
+                    <div class="overlay"></div> <!-- Black overlay -->
+                    <div class="hero-content">
+                        <h1>Get Started with Easy to Search Today!</h1>
+                        <p>Why wait? Easy to Search makes learning simple and effective. Our platform helps you master
+                            new skills, enhance your career, and explore new topics quickly.</p>
+                        <a href="/about" class="btn-primary">Read More</a>
+                        <% if(!currUser) {%>
+                            <a href="/signup" class="btn-secondary">Sign up</a>
+                            <% } %>
+                                <% if(currUser) {%>
+                                    <a href="/notes" class="btn-secondary">Notes</a>
+                                    <% } %>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide" style="background-image: url('./images/slide2.avif');">
+                    <div class="overlay"></div> <!-- Black overlay -->
+                    <div class="hero-content">
+                        <h1>Your time matters. Start making the most of it now</h1>
+                        <p>No matter where your curiosity leads you, Easy to Search is here to help you learn anything
+                            and everything, effortlessly. Start exploring today!</p>
+                        <a href="/about" class="btn-primary">Read More</a>
+                        <% if(!currUser) {%>
+                            <a href="/signup" class="btn-secondary">Sign up</a>
+                            <% } %>
+                                <% if(currUser) {%>
+                                    <a href="/notes" class="btn-secondary">Notes</a>
+                                    <% } %>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide" style="background-image: url('./images/slide3.jpg');">
+                    <div class="overlay"></div> <!-- Black overlay -->
+                    <div class="hero-content">
+                        <h1>Stop Searching and Start Learning</h1>
+                        <p>EasyToSearch provides direct access to handpicked, high-quality courses, organized and ready,
+                            so you can focus on learning, not searching.</p>
+                        <a href="/about" class="btn-primary">Read More</a>
+                        <% if(!currUser) {%>
+                            <a href="/signup" class="btn-secondary">Sign up</a>
+                            <% } %>
+                                <% if(currUser) {%>
+                                    <a href="/notes" class="btn-secondary">Notes</a>
+                                    <% } %>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="arrow arrow-left" onclick="prevSlide()">&#10094;</button>
+                <button class="arrow arrow-right" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </header>
+
+
+        <!-- ---------------------------------- MAIN ------------------------------------- -->
+        <main>
+            <!-- ---------------------------------- INVESTMENT SECTION ------------------------------------- -->
+            <section class="investment-section">
+                <h2>Advance your career ambitions with Easy To Search.</h2>
+                <p>Gain unlimited access to a vast range of curated YouTube courses, projects, and certifications, all
+                    taught by expert instructors. With Easy to Search, find the best content in one place—completely
+                    free.
+                </p>
+                <div class="cards-container">
+                    <div class="card">
+                        <div class="icon"><img src="images/graduation-cap.png" alt="Learn anything"></div>
+                        <h3>Learn Anything</h3>
+                        <p>No matter where you are or what you're trying to learn, we make it easy for you to get
+                            started.
+                            The best courses, the clearest explanations, and the quickest paths to success are just a
+                            click
+                            away.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><img src="images/save-money.png" alt="Save money"></div>
+                        <h3>Save Money</h3>
+                        <p>Education shouldn't be costly. At Easy to Search, we believe in making quality learning
+                            accessible to everyone. That is why we offer free access to best educational resources on
+                            YouTube, It will help in learn without spending dime.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><img src="images/learn-flex.png" alt="Flexible learning"></div>
+                        <h3>Flexible Learning</h3>
+                        <p>Ready to take control of your education? Dive into our curated YouTube courses and enjoy a
+                            learning experience that works around you, not the other way around. With Easy to Search,
+                            flexibility is just a click away.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><img src="images/unlimited-certificate.png" alt="Unlimited certificates">
+                        </div>
+                        <h3>Unlimited Certificates</h3>
+                        <p>Earn certificates for select skills—completely free! Easy to Search partners with specific
+                            YouTube channels offering certifications for their courses. Not all channels provide
+                            certificates, but those that do are clearly marked.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ---------------------------------- WHY CHOOSE US SECTION ------------------------------------- -->
+            <section class="why-choose-us">
+                <div class="text-center">
+                    <h2 class="title">Why Choose <strong class="highlight">Us</strong></h2>
+                    <span class="subtitle">Choose us for a Fast, Free and reliable way to discover top educational
+                        content
+                        online.</span>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-thumbs-up icon"></i>
+                            </div>
+                            <h4 class="sub-info">Curated Content</h4>
+                            <p class="feature-description">Handpicked resources from the best educational platforms to
+                                ensure quality and relevance.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-money-bill-wave icon"></i>
+                            </div>
+                            <h4 class="sub-info">Free Resources</h4>
+                            <p class="feature-description">Access a wide range of courses and tutorials without any
+                                cost.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column center-image">
+                        <img src="images/why-choose-us-image.avif" alt="Central Image" class="">
+                    </div>
+                    <div class="column">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-search icon"></i>
+                            </div>
+                            <h4 class="sub-info">Easy Navigation</h4>
+                            <p class="feature-description">Quickly find the resources you need with our user-friendly
+                                interface.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe icon"></i>
+                            </div>
+                            <h4 class="sub-info">Diverse Topics</h4>
+                            <p class="feature-description">Explore resources across various fields, from programming to
+                                arts.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------------------------------- CTA SECTION ------------------------------------- -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to Take Your Learning to the Next Level?</h2>
+                    <p>Explore the best resources, tutorials, and certification courses, or subscribe to get updates
+                        directly in your inbox!</p>
+                    <div class="cta-buttons">
+                        <a href="/courses" class="btn btn-primary">Explore Courses</a>
+                        <% if(!currUser) {%>
+                            <a href="/signup" class="btn btn-secondary">Register Now</a>
+                            <% } %>
+                                <% if(currUser) {%>
+                                    <a href="/notes" class="btn btn-secondary">Explore Notes</a>
+                                    <% } %>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------------------------------- POPULAR COURSES SECTION ------------------------------------- -->
+            <section class="popular-courses">
+                <h1>Essential Resources For Knowledge</h1>
+                <div class="course-cards">
+                    <div class="course-card">
+                        <div class="image">
+                            <img src="images/english-card.jpg" alt="English Grammar">
+                        </div>
+                        <div class="card-content">
+                            <h3>English Grammar</h3>
+                            <p class="description">Enhance grammar skills in 90 days with a free YouTube course,
+                                covering
+                                essential rules for writing and speaking.</p>
+                            <a href="https://www.youtube.com/embed/videoseries?si=eEp175VhxFUUQOTR&amp;list=PLkNaW6Tj8CVByia4jxBKjC9hkV6aCSulP"
+                                class="start-btn" target="_blank">Start</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="image">
+                            <img src="images/chatgpt-card.jpg" alt="chatgpt">
+                        </div>
+                        <div class="card-content">
+                            <h3>ChatGPT Complete Tutorial</h3>
+                            <p class="description">Learn to use ChatGPT effectively with this quick YouTube tutorial,
+                                perfect for beginners and tech-savvy users alike.</p>
+                            <a href="https://www.youtube.com/embed/wLk2xRzhbjk?si=aM3WG7gmQtbRcB0d" target="_blank"
+                                class="start-btn">Start</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="image">
+                            <img src="images/speakenglish-card.jpg" alt="speak american English">
+                        </div>
+                        <div class="card-content">
+                            <h3>Speak American English</h3>
+                            <p class="description">Improve American English speaking skills in 30 minutes with a video
+                                on
+                                pronunciation, phrases, and conversational tips.</p>
+                            <a href="https://www.youtube.com/embed/GEogN8Kd6-s?si=CMUUwLQT-sIKfMtF" target="_blank"
+                                class="start-btn">Start</a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="image">
+                            <img src="images/uniquewebsite-card.jpg" alt="essential websites">
+                        </div>
+                        <div class="card-content">
+                            <h3>Essential Student Websites</h3>
+                            <p class="description">Discover top websites for students to boost productivity, stay
+                                organized,
+                                and enhance learning with essential study tools.</p>
+                            <a href="https://www.youtube.com/embed/5v1sa0yB450?si=ZOf_IafN5pcI_i7q" target="_blank"
+                                class="start-btn">Start</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="image">
+                            <img src="images/editing-card.jpg" alt="key skills">
+                        </div>
+                        <div class="card-content">
+                            <h3>Key Skills Students</h3>
+                            <p class="description">
+                                Discover the top 6 high-paying tech skills for 2024 and access free resources and
+                                recommendations in this video.</p>
+                            <a href="https://www.youtube.com/embed/CLSyaOb3npY?si=gvLyT7oDho3YdZec" target="_blank"
+                                class="start-btn">Start</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="image">
+                            <img src="images/AI-card.jpg" alt="AI tools">
+                        </div>
+                        <div class="card-content">
+                            <h3>AI Tools for Students</h3>
+                            <p class="description">
+                                Discover key AI tools to boost studying, research, and productivity, from writing
+                                assistants
+                                to study organizers for students.</p>
+                            <a href="https://www.youtube.com/embed/bvZX7pdoxYY?si=MvOjB002q2mFm8EV" target="_blank"
+                                class="start-btn">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/courses"><button class="explore-btn">Explore More Resources</button></a>
+            </section>
+
+            <!-- ---------------------------------- STAY UPDATED SECTION ------------------------------------- -->
+            <section class="stay-updated">
+                <h1>Stay Updated With Us</h1>
+                <div class="main-container">
+                    <!-- Left Side (Main Course Cards) -->
+                    <div class="course-container">
+                        <!-- Course 1 -->
+                        <div class="course-card">
+                            <img src="images/stackoverflow-image.jpg" alt="stackoverflow">
+                            <div class="course-content">
+                                <h3>Stack Overflow Survey: Trends, Tools, Salaries, and Insights</h3>
+                                <p>The 2024 Stack Overflow Developer Survey offers insights into the global developer
+                                    community, covering programming trends, tools, salaries, and industry changes.
+                                    Participate to share experiences and compare your skills with others in the field.
+                                </p>
+                                <a href="https://survey.stackoverflow.co/2024/" target="_blank"
+                                    class="course-btn">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class="course-card">
+                            <img src="images/humata-image.jpeg" alt="humata.ai">
+                            <div class="course-content">
+                                <h3>Humata.ai: AI-Powered Document Analysis and Summarization Platform</h3>
+                                <p>
+                                    Humata.ai is an AI-powered platform that analyzes and summarizes documents,
+                                    providing
+                                    instant, cited responses. It supports unlimited uploads, offers strong security, and
+                                    integrates easily with websites, catering to varied user needs.
+                                </p>
+                                <a href="https://www.humata.ai/" target="_blank" class="course-btn">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class="course-card">
+                            <img src="images/mindgrasp-image.jpeg" alt="Learning mindgrasp">
+                            <div class="course-content">
+                                <h3>Mindgrasp AI: Simplify Complex Content Effortlessly</h3>
+                                <p>Mindgrasp AI helps users quickly grasp complex content by summarizing articles,
+                                    documents, and notes. It enhances learning, retention, and productivity, making it
+                                    ideal
+                                    for students, researchers, and professionals.</p>
+                                <a href="https://mindgrasp.ai/" target="_blank" class="course-btn">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side (Sidebar) -->
+                    <div class="sidebar-container">
+                        <div class="sidebar-container-content">
+                            <div class="content">
+                                <h2>Description</h2>
+                                <p>In this section, we showcase some of the most powerful tools and platforms shaping
+                                    the
+                                    technology and AI landscape. From industry surveys that provide key insights into
+                                    software development trends, to AI-powered platforms that streamline document
+                                    analysis
+                                    and summarization, and innovative tools designed to simplify complex content —
+                                    discover
+                                    resources that can enhance your skills and improve your learning experience. Dive
+                                    into
+                                    the latest advancements and stay ahead in the ever-evolving world of technology.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------------------------------- FAQ'S SECTION ------------------------------------- -->
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is Easy to Search?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Easy to Search is your ultimate resource for discovering and accessing the best free
+                                educational courses available on YouTube. Our platform simplifies the search for
+                                high-quality learning materials by curating and organizing top-rated content across a
+                                wide
+                                range of subjects, all in one convenient place.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is Key Features?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Curated Content: We handpick and organize the most effective and engaging YouTube
+                                courses, so
+                                you don't have to waste time searching through countless videos.
+                                Flexible Learning: Access courses anytime, anywhere, and learn at your own pace, fitting
+                                education into your busy schedule.
+                                Unlimited Certificates: Earn certificates from select YouTube channels for completing
+                                courses, helping you build credentials and enhance your resume.
+                                Cost-Free Learning: Enjoy free access to top-notch educational resources without any
+                                subscription fees or hidden costs.
+                                Why Choose Easy to Search?
+
+                                Time-Saving: Skip the endless search and get straight to the content that matters most
+                                to
+                                you.
+                                Comprehensive: Explore a diverse range of subjects, from coding and languages to arts
+                                and
+                                sciences.
+                                Accessible: Learn on your terms with content available 24/7 and tailored to your needs.
+                                Empowering: Gain certifications that add value to your career and personal growth.
+                                Get Started with Easy to Search Today!
+
+                                Unlock a world of knowledge and streamline your learning experience with Easy to Search.
+                                Discover the best YouTube courses, earn valuable certificates, and achieve your
+                                educational
+                                goals with ease.
+
+                                This description provides a clear overview of what Easy to Search is, highlighting its
+                                main
+                                features and benefits.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Are the courses really free?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, the courses featured on Easy to Search are truly free! We provide access to
+                                high-quality educational resources from YouTube without any cost. While some channels
+                                offer
+                                additional premium content or features, the core courses and materials you find through
+                                our
+                                platform are completely free to use.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I get a certificate?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can earn certificates for some courses featured on Easy to Search! We partner with
+                                specific YouTube channels that offer certifications upon course completion. Please note,
+                                not
+                                all channels provide certificates, but those that do are clearly marked on our platform.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do I need to create an account to use Easy to Search?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                No, you do not need to create an account to access the courses on Easy to Search. You
+                                can
+                                browse and view content freely. However, creating an account may offer additional
+                                features
+                                and personalization options in the future.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How often is new content added?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We regularly update our platform with new courses and resources to ensure you have access
+                                to
+                                the latest and most relevant educational content. Check back frequently to discover new
+                                learning opportunities.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I access courses on mobile devices?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                Yes, you can access Easy to Search on any device with internet access, including
+                                smartphones
+                                and tablets. Our platform is designed to be user-friendly and compatible with various
+                                devices for your convenience.
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What if I encounter technical issues?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you experience any technical issues, please visit our Help Center or contact our
+                                support
+                                team for assistance. We’re here to help ensure you have a smooth learning experience.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How can I stay updated on new courses and features?</h3>
+                            <span class="toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>To stay updated, you can subscribe to our newsletter or follow us on social media. We
+                                regularly share news about new courses, features, and updates to keep you informed.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ---------------------------------- FOOTER SECTION ------------------------------------- -->
+
+    </body>

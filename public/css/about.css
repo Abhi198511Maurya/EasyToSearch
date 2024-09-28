@@ -1,0 +1,183 @@
+/* <!-- ---------------------------------- INITIALISE VARIABLE WITH COLORS  ------------------------------------- --> */
+:root {
+    --blue: #6674cc;
+    --text-color: #fff;
+    --text-sec: #333;
+    --black: #000;
+    --gray: #eef2f771;
+}
+
+/* <!-- ---------------------------------- ABOUT SECTION STYLE  ------------------------------------- --> */
+.about-section {
+    padding: 3rem 2rem;
+    background-color: var(--text-color);
+    margin-top: 5rem;
+}
+
+.about-section .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-section .about-container .about-text {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 2rem;
+}
+
+.about-section .about-container .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--blue);
+}
+
+.about-section .about-container .about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-section .about-container .about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-section .about-container .about-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+@media (max-width:900px) {
+    .about-section .about-container .about-image {
+        display: none;
+    }
+}
+
+/* Section - 1 */
+.section-1 {
+    padding: 2rem;
+    background-color: var(--gray);
+    /* text-align: center; */
+}
+
+
+.section-1 h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section-1 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Vision Section */
+.section-2 {
+    padding: 2rem;
+    background-color: var(--text-color);
+    /* text-align: center; */
+}
+
+.section-2 h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section-2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+/* <!-- ---------------------------------- CTA SECTION STYLE  ------------------------------------- --> */
+.cta-section {
+    background: url('your-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--blue), #83a6e67a);
+    /* Dark overlay for contrast */
+    z-index: 1;
+}
+
+/* Glassmorphism Container */
+.cta-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.2);
+    /* Frosted glass effect */
+    backdrop-filter: blur(10px);
+    padding: 50px 30px;
+    /* border-radius: 20px; */
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #eee;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    background-color: #ff6b6b;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #ff3b3b;
+    transform: scale(1.1);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cta-content {
+        padding: 40px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}

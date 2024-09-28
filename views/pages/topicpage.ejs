@@ -1,0 +1,77 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <head>
+        <link rel="stylesheet" href="/css/topicpage.css">
+    </head>
+
+    <body>
+        <!-- ---------------------------------- NAVBAR USING JAVASCRIPT ------------------------------------- -->
+
+
+        <!-- ---------------------------------- HEADER SECTION EXCEPT HOME PAGE  ------------------------------------- -->
+        <div class="header-section-outer">
+            <div class="header-section">
+                <div class="header-section-content">
+                    <h1>All Topics</h1>
+                    <!-- content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------------- MAIN ------------------------------------- -->
+        <main>
+            <!-- ---------------------------------- TOPICS SCTION ------------------------------------- -->
+            <section class="courses-section">
+                <div class="card-grid">
+                    <% for (let topic of course.topics) { %>
+
+                        <div class="card">
+                            <div class="image-container">
+                                <img src="<%= topic.topicImage %>" alt="<%= topic.altTopicImage %>" class="course-img">
+                            </div>
+                            <div class="content">
+                                <h2 class="title">
+                                    <%= topic.topicTitle %>
+                                </h2>
+                                <div class="btns">
+                                    <a href="/courses/<%= course.name %>/<%= topic.topicTitle %>" class="btn">Next <i
+                                            class="fa-solid fa-chevron-right"></i></a>
+                                    <% if (currUser && currUser._id.equals('66f6f0e9a88a472ee64de432')) { %>
+                                        <form
+                                            action="/courses/<%= course.name %>/<%= topic.topicTitle %>?_method=DELETE"
+                                            method="post">
+                                            <button class="btn">Delete <i
+                                                    class="fa-solid fa-chevron-right"></i></button>
+                                        </form>
+                                        <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+            </section>
+            <% if (currUser && currUser._id.equals('66f6f0e9a88a472ee64de432')) { %>
+                <section class="add-course-form">
+                    <form action="/courses/<%= course.name %>" method="post">
+                        <div>
+                            <label for="topicTitle">Enter Name of Topic:</label>
+                            <input type="text" name="topicTitle" id="topicTitle" required>
+                        </div>
+                        <div>
+                            <label for="topicImage">Image URL of Topic:</label>
+                            <input type="text" name="topicImage" id="topicImage" required>
+                        </div>
+                        <div>
+                            <label for="altTopicImage">Alternate Text for Topic Image:</label>
+                            <input type="text" name="altTopicImage" id="altTopicImage" required>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+
+                </section>
+                <% } %>
+        </main>
+        <!-- --------------------------------------- Footer Section ---------------------------------------->
+
+
+    </body>

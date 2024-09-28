@@ -1,0 +1,138 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <head>
+        <link rel="stylesheet" href="css/courses.css">
+    </head>
+
+    <body>
+        <!-- ---------------------------------- NAVBAR USING JAVASCRIPT ------------------------------------- -->
+
+
+
+        <!-- ---------------------------------- HEADER EXCEPT HOME PAGE ------------------------------------- -->
+        <div class="header-section-outer">
+            <div class="header-section">
+                <div class="header-section-content">
+                    <h1>Courses</h1>
+                    <!-- content -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------------- MAIN CONTENT ------------------------------------- -->
+        <main>
+
+            <!-- ---------------------------------- COURSE CARD TEMPLATE ------------------------------------- -->
+            <section class="courses-section">
+                <h2>Browse Our Online Resources</h2>
+                <div class="course-container">
+                    <a href="#">
+                        <i class="fa-solid fa-palette"></i>
+                        <h3>UI/UX Design Course</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Art & Design</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-rectangle-ad"></i>
+                        <h3>Marketing</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Software Engineering</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-code"></i>
+                        <h3>Development</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Programming languages</h3>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Ethical Hacking</h3>
+                    </a>
+                    <!-- Add more courses as needed -->
+                </div>
+            </section>
+
+            <!-- ---------------------------------- COURSES SECTION ------------------------------------- -->
+            <section class="recommended-resources">
+                <h2>Course Library</h2>
+                <div class="resource-filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="development"><i class="fa-solid fa-code"></i>
+                        Development</button>
+                    <button class="filter-btn" data-category="designing"><i class="fas fa-pencil-ruler"></i>
+                        Designing</button>
+                    <button class="filter-btn" data-category="marketing"><i class="fas fa-ad"></i> Marketing</button>
+                    <button class="filter-btn" data-category="programming"><i class="fa-solid fa-laptop-code"></i>
+                        Proramming</button>
+                    <button class="filter-btn" data-category="business"><i class="fa-solid fa-business-time"></i>
+                        Business</button>
+                    <button class="filter-btn" data-category="language"><i class="fas fa-language"></i> Language
+                        Learning</button>
+                    <!-- Add more categories as needed -->
+                </div>
+                <div class="resource-cards">
+                    <% for(let course of allCourses) { %>
+                        <!-- Add more resource cards as needed -->
+                        <a class="resource-card" data-category="<%= course.category %>"
+                            href="/courses/<%= encodeURIComponent(course.name) %>" style="display: block;">
+                            <div class="image">
+                                <img src="<%= course.courseImage %>" alt="<%= course.altCourseImage %>">
+                            </div>
+                            <div class="content">
+                                <h4>
+                                    <%= course.name %>
+                                </h4>
+                                <span class="visit-btn">Visit Now<i class="fa-solid fa-chevron-right"></i></span>
+                            </div>
+                            <% if (currUser && currUser._id.equals('66f6f0e9a88a472ee64de432')) { %>
+                                <form action="/courses/<%= course.name %>?_method=DELETE" method="post">
+                                    <button>Delete</button>
+                                </form>
+                                <% } %>
+                        </a>
+                        <% } %>
+                </div>
+                <!-- Show more and Display less buttons -->
+                <button class="show-more-btn">Show More <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="show-less-btn" style="display: none;">Display Less <i
+                        class="fa-solid fa-chevron-up"></i></button>
+
+
+            </section>
+            <% if (currUser && currUser._id.equals('66f6f0e9a88a472ee64de432')) { %>
+                <section class="add-course-form">
+                    <form action="/courses" method="post">
+                        <div>
+                            <label for="name">Enter Name of Course:</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+                        <div>
+                            <label for="category">Enter Course Category:</label>
+                            <input type="text" name="category" id="category" required>
+                        </div>
+                        <div>
+                            <label for="courseImage">Image URL of Course:</label>
+                            <input type="text" name="courseImage" id="courseImage" required>
+                        </div>
+                        <div>
+                            <label for="altCourseImage">Alternate Text for Course Image:</label>
+                            <input type="text" name="altCourseImage" id="altCourseImage" required>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+
+                </section>
+                <% } %>
+        </main>
+
+        <!-- ---------------------------------- FOOTER SECTION ------------------------------------- -->
+
+
+        <script src="js/courses.js"></script>
+    </body>

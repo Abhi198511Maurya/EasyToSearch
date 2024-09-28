@@ -1,0 +1,128 @@
+/* <!-- ---------------------------------- INITIALISE VARIABLE WITH COLORS  ------------------------------------- --> */
+:root {
+    --blue: #6674cc;
+    --text-color: #fff;
+    --text-sec: #333;
+    --black: #000;
+    --gray: #eef2f771;
+}
+
+/* <!-- ---------------------------------- MAIN SECTION STYLE  ------------------------------------- --> */
+main{
+    margin: 5rem auto;
+}
+
+/* <!-- ---------------------------------- COURSE SECTION STYLE  ------------------------------------- --> */
+.courses-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.courses-section .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.courses-section .card-grid .card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    background-color: var(--gray);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.courses-section .card-grid .card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.courses-section .card-grid .card .image-container {
+    flex: 0 0 300px; /* Fixed width */
+    /* height: 200px; Set a fixed height for the image container */
+    overflow: hidden;
+}
+
+.courses-section .card-grid .card .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ensures the image covers the entire container without distortion */
+}
+
+.courses-section .card-grid .card .content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.courses-section .card-grid .card .content .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-sec);
+}
+
+.courses-section .card-grid .card .content .description {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+.courses-section .card-grid .card .content .btns{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+.courses-section .card-grid .card .content .btn {
+    background-color: var(--blue);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: max-content;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.courses-section .card-grid .card .content .btn:hover {
+    background-color: #4a59ba;
+}
+
+/* <!-- ---------------------------------- MEDIA SECTION STYLE  ------------------------------------- --> */
+@media (max-width: 768px) {
+    .courses-section .card-grid .card {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .courses-section .card-grid .card .image-container {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .courses-section .card-grid .card .image-container .course-img {
+        width: 100%;
+        /* height: auto; */
+    }
+
+    .courses-section .card-grid .card .content {
+        text-align: center;
+    }
+    .courses-section .card-grid .card .content .btn{
+        margin: auto;
+    }
+
+    .courses-section .card-grid {
+        flex-direction: column;
+    }
+}

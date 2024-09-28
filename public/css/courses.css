@@ -1,0 +1,219 @@
+/* <!-- ---------------------------------- INITIALISE VARIABLE WITH COLORS ------------------------------------- --> */
+:root {
+    --blue: #6674cc;
+    --text-color: #fff;
+    --text-sec: #333;
+    --black: #000;
+    --gray: #eef2f771;
+}
+
+/* <!-- ---------------------------------- COURSE CARD TEMPLATE SECTION STYLE  ------------------------------------- --> */
+.courses-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.courses-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 2rem;
+    color: var(--text-sec);
+}
+
+.courses-section .course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.courses-section .course-container a {
+    background-color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 200px;
+    transition: all 0.3s ease, color 0.5s ease-in-out;
+}
+
+
+.courses-section .course-container a i {
+    font-size: 50px;
+    color: var(--blue);
+    margin-bottom: 15px;
+    transition: color 0.5s ease-in-out;
+}
+.courses-section .course-container a:hover i{
+    color: var(--text-color);
+}
+
+.courses-section .course-container a:hover {
+    transform: translateY(-10px);
+    background-color: var(--blue);
+    color: var(--text-color);
+}
+
+.courses-section .course-container a h3 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+.recommended-resources .show-more-btn {
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 3rem 0 0 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.recommended-resources .show-more-btn:hover {
+    background-color: #4552a5;
+}
+
+.recommended-resources .show-more-btn, .recommended-resources .show-less-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 3rem auto 0 auto;
+    transition: background-color 0.5s ease-in-out;
+}
+.recommended-resources .show-more-btn i, .recommended-resources .show-less-btn i{
+    margin-left: 0.6rem;
+}
+
+.recommended-resources .show-more-btn:hover, .recommended-resources .show-less-btn:hover {
+    background-color: #4552a5;
+}
+
+
+/* <!-- ---------------------------------- COURSES SECTION STYLE  ------------------------------------- --> */
+.recommended-resources {
+    padding: 3rem 1rem;
+    background-color: var(--gray);
+    text-align: center;
+}
+
+.recommended-resources h2{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.recommended-resources .resource-filters {
+    margin-bottom: 3rem;
+}
+
+.recommended-resources .resource-filters .filter-btn {
+    padding: 0.6rem 1.5rem;
+    margin: 0.5rem 0.5rem;
+    background-color: #6674cca4;
+    color: var(--text-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.recommended-resources .resource-filters .filter-btn.active {
+    background-color: var(--blue);
+    transform: scale(1.07);
+}
+
+.recommended-resources .resource-filters .filter-btn:hover {
+    background-color: var(--blue);
+}
+
+.recommended-resources .resource-cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.recommended-resources .resource-cards .resource-card {
+    position: relative;
+    width: 18rem;
+    background: var(--text-color);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    overflow: hidden;
+    padding-bottom: 3rem; /* Add space at the bottom */
+}
+
+.recommended-resources .resource-cards .resource-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.recommended-resources .resource-cards .resource-card .image {
+    overflow: hidden;
+}
+
+.recommended-resources .resource-cards .resource-card:hover img {
+    transform: scale(1.1);
+}
+
+.recommended-resources .resource-cards .resource-card img {
+    width: 100%;
+    height: 10rem;
+    object-fit: fill;
+    transition: transform 0.3s ease;
+}
+
+.recommended-resources .resource-cards .resource-card h4 {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    color: #444;
+}
+
+.recommended-resources .resource-cards .resource-card .visit-btn {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    margin: 0.5rem;
+}
+
+.recommended-resources .resource-cards .resource-card .visit-btn:hover {
+    color: var(--blue);
+    background-color: var(--gray);
+}
+
+/* <!-- ---------------------------------- MEDIA QUEERIES SECTION STYLE  ------------------------------------- --> */
+@media (max-width: 1024px) {
+    .recommended-resources .resource-cards .resource-card {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .recommended-resources .resource-cards .resource-card {
+        width: 60%;
+    }
+
+    .recommended-resources .resource-filters.filter-btn {
+        margin: 0.5rem 0;
+        padding: 0.5rem 1.5rem;
+    }
+}

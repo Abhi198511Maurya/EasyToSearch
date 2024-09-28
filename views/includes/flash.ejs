@@ -1,0 +1,25 @@
+<% if(success && success.length){%>
+    <div class="alert-box alert-success">
+        <div class="alert">
+            <%= success %>
+                <span class="close-btn">&times;</span>
+        </div>
+    </div>
+
+    <%} %>
+        <% if(error && error.length){%>
+            <div class="alert-box alert-error">
+                <div class="alert">
+                    <%= error %>
+                        <span class="close-btn">&times;</span>
+                </div>
+            </div>
+
+            <%} %>
+
+                <script>
+                    // for flash message
+                    document.querySelector('.close-btn').addEventListener('click', function () {
+                        document.querySelector('.alert-box').style.display = 'none';
+                    });
+                </script>

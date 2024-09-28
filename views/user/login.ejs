@@ -1,0 +1,23 @@
+<% layout('/layouts/boilerplate') -%>
+
+    
+<body>
+    <div class="popup-outer">
+        <div class="modal">
+            <div class="modal-content">
+                <h2>Login to start learning</h2>
+                <form action="/login" method="post">
+                    <label for="loginEmail">Your Username</label>
+                    <input type="text" id="loginEmail" name="username" placeholder="Username" required>
+
+                    <label for="loginPassword">Your Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+
+                    <button type="submit">Login</button>
+
+                    <p><a href="/signup" id="switchToSignup">Sign Up</a><a href="#">Forgot password?</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
