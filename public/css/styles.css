@@ -71,6 +71,15 @@ main {
     border-radius: 4px;
     font-size: 16px;
 }
+.add-course-form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 150px;
+    resize:none;
+}
 
 .add-course-form button {
     padding: 10px 20px;
@@ -185,7 +194,7 @@ main {
 .alert-box {
     position: absolute;
     width: 50%;
-    margin: 5rem auto auto 23rem;
+    margin: 5rem auto auto 25%;
     padding: 15px;
     border: 1px solid green;
     background-color: #d4edda;

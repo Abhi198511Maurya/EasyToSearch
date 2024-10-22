@@ -44,7 +44,7 @@ main{
 
 .courses-section .card-grid .card .image-container {
     flex: 0 0 300px; /* Fixed width */
-    /* height: 200px; Set a fixed height for the image container */
+    min-height: 200px; /*Set a fixed height for the image container */
     overflow: hidden;
 }
 
@@ -117,6 +117,9 @@ main{
 
     .courses-section .card-grid .card .content {
         text-align: center;
+    }
+    .courses-section .card-grid .card .content .btns{
+        flex-direction: column;
     }
     .courses-section .card-grid .card .content .btn{
         margin: auto;

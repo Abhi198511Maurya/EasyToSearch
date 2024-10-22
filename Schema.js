@@ -6,11 +6,13 @@ module.exports.courseSchema = Joi.object({
     courseImage: Joi.string().required(),
     altCourseImage: Joi.string().required(),
 });
+
 module.exports.topicSchema = Joi.object({
     topicTitle: Joi.string().required(),
     topicImage: Joi.string().required(),
     altTopicImage: Joi.string().required(),
 });
+
 module.exports.resourceSchema = Joi.object({
     resourceTitle: Joi.string().required(),
     resourceDescription: Joi.string().required(),
